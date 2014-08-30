@@ -1,0 +1,149 @@
+{
+    "envelopeTemplateDefinition": {
+        "name": "Automated post template",
+        "shared": "true",
+        "password": "",
+        "description": "8/26",
+        "lastModified": "2014-08-26T19:12:53.1470000Z",
+        "lastModifiedBy": {
+            "userName": "Douglas Hagan",
+            "email": "dhagan@yahoo.com",
+            "userId": "26b12595-9cb9-46f9-b910-d3b1e99cab9b",
+            "uri": "/users/26b12595-9cb9-46f9-b910-d3b1e99cab9b"
+        },
+        "pageCount": 1,
+        "uri": "/templates/1674e3eb-887f-4290-874d-c23c04df010c",
+        "folderName": "Templates",
+        "folderId": "bb52a7db-cbe0-469f-afee-e9ba27f0de2b",
+        "folderUri": "/folders/bb52a7db-cbe0-469f-afee-e9ba27f0de2b",
+        "owner": {
+            "userName": "Douglas Hagan",
+            "email": "dhagan@yahoo.com",
+            "userId": "26b12595-9cb9-46f9-b910-d3b1e99cab9b"
+        }
+    },
+    "documents": [
+        {
+            "documentId": "1",
+            "name": "DougyFresh.pdf",
+            "order": "1",
+            "pages": "1"
+        }
+    ],
+    "recipients": {
+        "signers": [
+            {
+                "defaultRecipient": "false",
+                "tabs": {
+                    "signHereTabs": [
+                        {
+                            "name": "SignHere",
+                            "tabLabel": "SignOneSecondSign",
+                            "scaleValue": 1.0,
+                            "optional": "false",
+                            "documentId": "1",
+                            "recipientId": "1",
+                            "pageNumber": "1",
+                            "xPosition": "67",
+                            "yPosition": "5"
+                        },
+                        {
+                            "name": "SignHere",
+                            "tabLabel": "SignOneFirstSign",
+                            "scaleValue": 1.0,
+                            "optional": "false",
+                            "documentId": "1",
+                            "recipientId": "1",
+                            "pageNumber": "1",
+                            "xPosition": "120",
+                            "yPosition": "664"
+                        },
+                        {
+                            "name": "SignHere",
+                            "tabLabel": "SignTwoFirstSign",
+                            "scaleValue": 1.0,
+                            "optional": "false",
+                            "documentId": "1",
+                            "recipientId": "1",
+                            "pageNumber": "1",
+                            "xPosition": "120",
+                            "yPosition": "699"
+                        }
+                    ],
+                    "dateSignedTabs": [
+                        {
+                            "name": "DateSigned",
+                            "value": "",
+                            "tabLabel": "DocuSignDateSignedOne",
+                            "font": "helvetica",
+                            "bold": "false",
+                            "italic": "false",
+                            "underline": "false",
+                            "fontColor": "black",
+                            "fontSize": "size12",
+                            "documentId": "1",
+                            "recipientId": "1",
+                            "pageNumber": "1",
+                            "xPosition": "404",
+                            "yPosition": "705"
+                        },
+                        {
+                            "name": "DateSigned",
+                            "value": "",
+                            "tabLabel": "DocuSignDateSignedTwo",
+                            "font": "helvetica",
+                            "bold": "false",
+                            "italic": "false",
+                            "underline": "false",
+                            "fontColor": "black",
+                            "fontSize": "size12",
+                            "documentId": "1",
+                            "recipientId": "1",
+                            "pageNumber": "1",
+                            "xPosition": "403",
+                            "yPosition": "741"
+                        }
+                    ]
+                },
+                "signInEachLocation": "false",
+                "name": "",
+                "email": "",
+                "recipientId": "1",
+                "accessCode": "",
+                "requireIdLookup": "false",
+                "routingOrder": "1",
+                "note": "",
+                "roleName": "RoleOne",
+                "templateLocked": "false",
+                "templateRequired": "false",
+                "inheritEmailNotificationConfiguration": "false"
+            }
+        ],
+        "agents": [],
+        "editors": [],
+        "intermediaries": [],
+        "carbonCopies": [],
+        "certifiedDeliveries": [],
+        "inPersonSigners": [],
+        "recipientCount": "1"
+    },
+    "notification": {
+        "reminders": {
+            "reminderEnabled": "false",
+            "reminderDelay": "0",
+            "reminderFrequency": "0"
+        },
+        "expirations": {
+            "expireEnabled": "true",
+            "expireAfter": "120",
+            "expireWarn": "0"
+        }
+    },
+    "emailSubject": "Please DocuSign this document: DougyFresh.pdf",
+    "emailBlurb": "",
+    "signingLocation": "online",
+    "authoritativeCopy": "false",
+    "enforceSignerVisibility": "false",
+    "enableWetSign": "true",
+    "allowMarkup": "false"
+}
