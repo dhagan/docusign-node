@@ -1,0 +1,83 @@
+<envelopeTemplate xmlns="http://www.docusign.com/restapi" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <allowMarkup>false</allowMarkup>
+    <authoritativeCopy>false</authoritativeCopy>
+    <emailBlurb/>
+    <emailSubject>Please DocuSign this document: float.pdf
+    </emailSubject>
+    <enableWetSign>true</enableWetSign>
+    <enforceSignerVisibility>false</enforceSignerVisibility>
+    <signingLocation>online</signingLocation>
+    <documents>
+        <document>
+            <documentId>1</documentId>
+            <name>float.pdf</name>
+            <order>1</order>
+            <pages>1</pages>
+            <uri>/envelopes/fe0bed6d-4773-4ab2-a136-f40f8b8f53d5/documents/1
+            </uri>
+        </document>
+    </documents>
+    <envelopeTemplateDefinition>
+        <description>kkk</description>
+        <folderId>8667564b-c6ce-4737-b38d-e0ed22b067ba</folderId>
+        <folderName>Acme 1</folderName>
+        <folderUri>/folders/8667564b-c6ce-4737-b38d-e0ed22b067ba</folderUri>
+        <lastModified>2014-09-01T16:47:32.6000000Z</lastModified>
+        <lastModifiedBy>
+            <email>dhagan@yahoo.com</email>
+            <uri>/users/26b12595-9cb9-46f9-b910-d3b1e99cab9b</uri>
+            <userId>26b12595-9cb9-46f9-b910-d3b1e99cab9b</userId>
+            <userName>Douglas Hagan
+            </userName>
+        </lastModifiedBy>
+        <name>template acme 1</name>
+        <owner>
+            <email>dhagan@yahoo.com</email>
+            <userId>26b12595-9cb9-46f9-b910-d3b1e99cab9b</userId>
+            <userName>Douglas Hagan</userName>
+        </owner>
+        <pageCount>1</pageCount>
+        <password/>
+        <shared>true</shared>
+        <templateId>fe0bed6d-4773-4ab2-a136-f40f8b8f53d5</templateId>
+        <uri>/templates/fe0bed6d-4773-4ab2-a136-f40f8b8f53d5</uri>
+    </envelopeTemplateDefinition>
+    <notification>
+        <expirations>
+            <expireAfter>120</expireAfter>
+            <expireEnabled>true</expireEnabled>
+            <expireWarn>0</expireWarn>
+        </expirations>
+        <reminders>
+            <reminderDelay>0</reminderDelay>
+            <reminderEnabled>false</reminderEnabled>
+            <reminderFrequency>0</reminderFrequency>
+        </reminders>
+    </notification>
+    <recipients>
+        <agents/>
+        <carbonCopies/>
+        <certifiedDeliveries/>
+        <editors/>
+        <inPersonSigners/>
+        <intermediaries/>
+        <recipientCount>1</recipientCount>
+        <signers>
+            <signer>
+                <accessCode/>
+                <inheritEmailNotificationConfiguration>false</inheritEmailNotificationConfiguration>
+                <note/>
+                <recipientId>1</recipientId>
+                <requireIdLookup>false</requireIdLookup>
+                <routingOrder>1
+                </routingOrder>
+                <templateLocked>false</templateLocked>
+                <templateRequired>false</templateRequired>
+                <email/>
+                <name/>
+                <defaultRecipient>false</defaultRecipient>
+                <signInEachLocation>false</signInEachLocation>
+            </signer>
+        </signers>
+    </recipients>
+</envelopeTemplate>

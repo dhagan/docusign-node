@@ -21,8 +21,7 @@
         <description>8/26</description>
         <folderId>bb52a7db-cbe0-469f-afee-e9ba27f0de2b</folderId>
         <folderName>Templates</folderName>
-        <folderUri>/fo
-            lders/bb52a7db-cbe0-469f-afee-e9ba27f0de2b
+        <folderUri>/folders/bb52a7db-cbe0-469f-afee-e9ba27f0de2b
         </folderUri>
         <lastModified>2014-08-26T19:12:53.1470000Z</lastModified>
         <lastModifiedBy>
@@ -39,8 +38,7 @@
             <userName>Douglas Hagan</userName>
         </owner>
         <pageCount>1</pageCount>
-        <password
-                />
+        <password/>
         <shared>true</shared>
         <templateId>1674e3eb-887f-4290-874d-c23c04df010c</templateId>
         <uri>/templates/1674e3eb-887f-4290-874d-c23c04df010c</uri>
@@ -62,8 +60,7 @@
         <agents/>
         <carbonCopies/>
         <certifiedDeliveries/>
-        <
-                editors/>
+        <editors/>
         <inPersonSigners/>
         <intermediaries/>
         <recipientCount>3</recipientCount>
@@ -124,9 +121,7 @@
                             <tabId>5fe5f2b2-05e0-491c-8200-c027a4feb913</tabId>
                             <xPosition>404</xPosition>
                             <yPosition>705</yPosition>
-                            <bold>f
-                                alse
-                            </bold>
+                            <bold>false</bold>
                             <font>helvetica</font>
                             <fontColor>black</fontColor>
                             <fontSize>size12</fontSize>

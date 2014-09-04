@@ -51,7 +51,7 @@ async.waterfall(
         //////////////////////////////////////////////////////////////////////
         function (next) {
             var fs = require('fs');
-            var file = __dirname + '/template.json';
+            var file = __dirname + '/template.xml';
 
             fs.readFile(file, 'utf8', function (err, data) {
                 if (err) {
@@ -69,7 +69,7 @@ async.waterfall(
         // step 3 get the pdf
         function (next) {
             var fs = require('fs');
-            var file = __dirname + '/doug.txt';
+            var file = __dirname + '/LoremIpsum.pdf';
 
             fs.readFile(file, function (err, data) {
                 if (err) {
@@ -109,7 +109,7 @@ async.waterfall(
                 },
                 multipart: [
                     {
-                        'Content-Type': 'application/json',
+                        'Content-Type': 'application/xml',
                         'Content-Disposition': 'form-data',
                         body: body
                     },

@@ -1,0 +1,48 @@
+{"$id": "1", "$type": "SupplierPortal.Model.Certification, SupplierPortal.Model", "Id": 100, "DateSubmitted": "2013-03-30T22:06:53.800", "CertificationStatusId": 6, "CertificationStatus": null, "DateCertified": "2013-04-19T22:06:53.800", "CertifiedBy": null, "DateReleased": "2013-04-24T22:06:53.800", "ProductManagerId": 20, "ReleasedBy": null, "Attachment": null, "FileName": null, "SupplierId": 20, "Supplier": {
+    "$id": "2",
+    "$type": "SupplierPortal.Model.Supplier, SupplierPortal.Model",
+    "Id": 20,
+    "Name": "Supplier T",
+    "LogoUrl": "http://www.koait.com/wp-content/uploads/2014/08/Supplier.jpg",
+    "AccountNumber": "19",
+    "Address1": "Supplier ",
+    "Address2": null,
+    "City": "Supplier ",
+    "State": "HI",
+    "Zip": "96762",
+    "Active": false,
+    "Certifications": [
+        {
+            "$ref": "1"
+        }
+    ],
+    "Contacts": [],
+    "Emails": [],
+    "PrimaryProductManager": null,
+    "ProductManagers": [],
+    "SupplierProductManagers": [],
+    "ProductGroups": []
+}, "Products": [
+    {
+        "$id": "3",
+        "$type": "SupplierPortal.Model.Product, SupplierPortal.Model",
+        "Id": 1,
+        "NDC": null,
+        "Econo": null,
+        "NameDescription": "Chemical X",
+        "Dosage": null,
+        "PackSize": null,
+        "IsMonograph": null,
+        "IsGeneric": true,
+        "IsCurrentWACPublishedByFDB": null,
+        "IsFDAApproved": true,
+        "IsSupplierOrRepackagerOrReseller": null,
+        "IsActiveProduct": null,
+        "ContractLead": null,
+        "IsCertified": true,
+        "Certification": {
+            "$ref": "1"
+        },
+        "CountriesOfOrigin": []
+    }
+]}
