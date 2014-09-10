@@ -1,0 +1,25 @@
+{"envelopesInformation": {
+    "@xmlns": "http://www.docusign.com/restapi",
+    "@xmlns:i": "http://www.w3.org/2001/XMLSchema-instance",
+    "endPosition": "0",
+    "envelopes": {
+        "envelope": {
+            "certificateUri": "/envelopes/56c19b9c-d515-4b83-bd4e-f96f541fffb0/documents/certificate",
+            "customFieldsUri": "/envelopes/56c19b9c-d515-4b83-bd4e-f96f541fffb0/custom_fields",
+            "documentsCombinedUri": "/envelopes/56c19b9c-d515-4b83-bd4e-f96f541fffb0/documents/combined",
+            "documentsUri": "/envelopes/56c19b9c-d515-4b83-bd4e-f96f541fffb0/documents",
+            "envelopeId": "56c19b9c-d515-4b83-bd4e-f96f541fffb0",
+            "envelopeUri": "/envelopes/56c19b9c-d515-4b83-bd4e-f96f541fffb0",
+            "notificationUri": "/envelopes/56c19b9c-d515-4b83-bd4e-f96f541fffb0/notification",
+            "recipientsUri": "/envelopes/56c19b9c-d515-4b83-bd4e-f96f541fffb0/recipients",
+            "status": "completed",
+            "statusChangedDateTime": "2014-09-03T19:17:23.9030000Z",
+            "templatesUri": "/envelopes/56c19b9c-d515-4b83-bd4e-f96f541fffb0/templates"
+        }
+    },
+    "nextUri": null,
+    "previousUri": null,
+    "resultSetSize": "1",
+    "startPosition": "0",
+    "totalSetSize": "1"
+}}

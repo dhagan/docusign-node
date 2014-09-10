@@ -17,7 +17,7 @@ var async = require("async"),		// async module
     integratorKey = config.integratorKey,			// your account Integrator Key (found on Preferences -> API page)
     recipientName = "John Doe",			// recipient (signer) name
     //templateId = "1674E3EB-887F-4290-874D-C23C04DF010C",			// provide valid templateId from a template in your account
-    templateId = "FE0BED6D-4773-4AB2-A136-F40F8B8F53D5",
+    templateId = "1674E3EB-887F-4290-874D-C23C04DF010C",
     templateRoleName = "RoleOne",		// template role that exists on template referenced above
     baseUrl = "",				// we will retrieve this
     envelopeId = "";			// created from step 2
@@ -59,7 +59,15 @@ async.waterfall(
 //			if(!parseResponseBody(err, res, body)) {
 //				return;
 //			}
-                console.log(body);
+                var fs = require('fs');
+                var file = __dirname + '/' + templateId + '.template.xml';
+                fs.writeFile(file, body, function(err) {
+                    if(err) {
+                        console.log(err);
+                    } else {
+                        console.log(file + "The file was saved!");
+                    }
+                });
             });
         }
     ]);

@@ -1,0 +1,23 @@
+<envelopeDocumentsResult xmlns="http://www.docusign.com/restapi" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <envelopeDocuments>
+        <envelopeDocument>
+            <documentId>1</documentId>
+            <name>DougText.pdf</name>
+            <order>1</order>
+            <pages>1</pages>
+            <type>content</type>
+            <uri>/envelopes/56c19b9c-d515-4b83-bd4e-f96f541fffb0/documents/1</uri>
+        </envelopeDocument>
+        <envelopeDocument>
+            <documentId>certificate</documentId>
+            <name>Summary</name>
+            <order>999</order>
+            <pages>4</pages>
+            <type>summary</type>
+            <uri>/envelopes/56c19b9c-d515-4b83-bd4e-f96f541fffb0/documents/certificate</uri>
+        </envelopeDocument>
+    </envelopeDocuments>
+    <envelopeId>56c19b9c-d515-4b83-bd4e-f96f541fffb0</envelopeId>
+</envelopeDocumentsResult>
+
+
