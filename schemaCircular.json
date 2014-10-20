@@ -1,0 +1,1301 @@
+{"schema": {
+    "namespace": "SupplierPortal.DataAccess",
+    "alias": "Self",
+    "annotation:UseStrongSpatialTypes": "false",
+    "xmlns:annotation": "http://schemas.microsoft.com/ado/2009/02/edm/annotation",
+    "xmlns:customannotation": "http://schemas.microsoft.com/ado/2013/11/edm/customannotation",
+    "xmlns": "http://schemas.microsoft.com/ado/2009/11/edm",
+    "cSpaceOSpaceMapping": "[[\"SupplierPortal.DataAccess.Certification\",\"SupplierPortal.Model.Certification\"],[\"SupplierPortal.DataAccess.CertificationStatus\",\"SupplierPortal.Model.CertificationStatus\"],[\"SupplierPortal.DataAccess.SupplierContact\",\"SupplierPortal.Model.SupplierContact\"],[\"SupplierPortal.DataAccess.Supplier\",\"SupplierPortal.Model.Supplier\"],[\"SupplierPortal.DataAccess.EmailHistory\",\"SupplierPortal.Model.EmailHistory\"],[\"SupplierPortal.DataAccess.EmailCategory\",\"SupplierPortal.Model.EmailCategory\"],[\"SupplierPortal.DataAccess.ProductGroup\",\"SupplierPortal.Model.ProductGroup\"],[\"SupplierPortal.DataAccess.SupplierProductManagerMap\",\"SupplierPortal.Model.SupplierProductManagerMap\"],[\"SupplierPortal.DataAccess.ProductManager\",\"SupplierPortal.Model.ProductManager\"],[\"SupplierPortal.DataAccess.Product\",\"SupplierPortal.Model.Product\"],[\"SupplierPortal.DataAccess.CountryOfOrigin\",\"SupplierPortal.Model.CountryOfOrigin\"],[\"SupplierPortal.DataAccess.HelpContent\",\"SupplierPortal.Model.HelpContent\"]]",
+    "entityType": [
+        {
+            "name": "Certification",
+            "customannotation:ClrType": "SupplierPortal.Model.Certification, SupplierPortal.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "key": {
+                "propertyRef": {
+                    "name": "Id"
+                }
+            },
+            "property": [
+                {
+                    "name": "Id",
+                    "type": "Edm.Int32",
+                    "nullable": "false",
+                    "annotation:StoreGeneratedPattern": "Identity"
+                },
+                {
+                    "name": "CertificationStatusId",
+                    "type": "Edm.Int32",
+                    "nullable": "false"
+                },
+                {
+                    "name": "DateCertified",
+                    "type": "Edm.DateTime"
+                },
+                {
+                    "name": "SupplierContactId",
+                    "type": "Edm.Int32"
+                },
+                {
+                    "name": "Attachment",
+                    "type": "Edm.Binary",
+                    "maxLength": "Max",
+                    "fixedLength": "false"
+                },
+                {
+                    "name": "FileName",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "DocusignEnvelopeId",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "SupplierId",
+                    "type": "Edm.Int32",
+                    "nullable": "false"
+                }
+            ],
+            "navigationProperty": [
+                {
+                    "name": "CertificationStatus",
+                    "relationship": "Self.CertificationStatus_Certifications",
+                    "fromRole": "CertificationStatus_Certifications_Target",
+                    "toRole": "CertificationStatus_Certifications_Source"
+                },
+                {
+                    "name": "CertifiedBy",
+                    "relationship": "Self.Certification_CertifiedBy",
+                    "fromRole": "Certification_CertifiedBy_Source",
+                    "toRole": "Certification_CertifiedBy_Target"
+                },
+                {
+                    "name": "Products",
+                    "relationship": "Self.Product_Certification",
+                    "fromRole": "Product_Certification_Target",
+                    "toRole": "Product_Certification_Source"
+                },
+                {
+                    "name": "Supplier",
+                    "relationship": "Self.Certification_Supplier",
+                    "fromRole": "Certification_Supplier_Source",
+                    "toRole": "Certification_Supplier_Target"
+                }
+            ]
+        },
+        {
+            "name": "CertificationStatus",
+            "customannotation:ClrType": "SupplierPortal.Model.CertificationStatus, SupplierPortal.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "key": {
+                "propertyRef": {
+                    "name": "Id"
+                }
+            },
+            "property": [
+                {
+                    "name": "Id",
+                    "type": "Edm.Int32",
+                    "nullable": "false",
+                    "annotation:StoreGeneratedPattern": "Identity"
+                },
+                {
+                    "name": "Name",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                }
+            ],
+            "navigationProperty": {
+                "name": "Certifications",
+                "relationship": "Self.CertificationStatus_Certifications",
+                "fromRole": "CertificationStatus_Certifications_Source",
+                "toRole": "CertificationStatus_Certifications_Target"
+            }
+        },
+        {
+            "name": "SupplierContact",
+            "customannotation:ClrType": "SupplierPortal.Model.SupplierContact, SupplierPortal.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "key": {
+                "propertyRef": {
+                    "name": "Id"
+                }
+            },
+            "property": [
+                {
+                    "name": "Id",
+                    "type": "Edm.Int32",
+                    "nullable": "false",
+                    "annotation:StoreGeneratedPattern": "Identity"
+                },
+                {
+                    "name": "FirstName",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "LastName",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "JobTitle",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "IsPrimaryContact",
+                    "type": "Edm.Boolean",
+                    "nullable": "false"
+                },
+                {
+                    "name": "ReceiveEmailNotifications",
+                    "type": "Edm.Boolean"
+                },
+                {
+                    "name": "EmailAddress",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "Password",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "PhoneNumber",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "SupplierId",
+                    "type": "Edm.Int32",
+                    "nullable": "false"
+                }
+            ],
+            "navigationProperty": {
+                "name": "Supplier",
+                "relationship": "Self.SupplierContact_Supplier",
+                "fromRole": "SupplierContact_Supplier_Source",
+                "toRole": "SupplierContact_Supplier_Target"
+            }
+        },
+        {
+            "name": "Supplier",
+            "customannotation:ClrType": "SupplierPortal.Model.Supplier, SupplierPortal.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "key": {
+                "propertyRef": {
+                    "name": "Id"
+                }
+            },
+            "property": [
+                {
+                    "name": "Id",
+                    "type": "Edm.Int32",
+                    "nullable": "false",
+                    "annotation:StoreGeneratedPattern": "Identity"
+                },
+                {
+                    "name": "Name",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true",
+                    "nullable": "false"
+                },
+                {
+                    "name": "LogoUrl",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "AccountNumber",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "Address1",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "Address2",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "City",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "State",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "Zip",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "IsConfidentialCompliant",
+                    "type": "Edm.Boolean",
+                    "nullable": "false"
+                },
+                {
+                    "name": "Active",
+                    "type": "Edm.Boolean",
+                    "nullable": "false"
+                },
+                {
+                    "name": "ProductGroupId",
+                    "type": "Edm.Int32",
+                    "nullable": "false"
+                }
+            ],
+            "navigationProperty": [
+                {
+                    "name": "Certifications",
+                    "relationship": "Self.Certification_Supplier",
+                    "fromRole": "Certification_Supplier_Target",
+                    "toRole": "Certification_Supplier_Source"
+                },
+                {
+                    "name": "Contacts",
+                    "relationship": "Self.SupplierContact_Supplier",
+                    "fromRole": "SupplierContact_Supplier_Target",
+                    "toRole": "SupplierContact_Supplier_Source"
+                },
+                {
+                    "name": "Emails",
+                    "relationship": "Self.EmailHistory_Supplier",
+                    "fromRole": "EmailHistory_Supplier_Target",
+                    "toRole": "EmailHistory_Supplier_Source"
+                },
+                {
+                    "name": "ProductGroup",
+                    "relationship": "Self.Supplier_ProductGroup",
+                    "fromRole": "Supplier_ProductGroup_Source",
+                    "toRole": "Supplier_ProductGroup_Target"
+                },
+                {
+                    "name": "SupplierProductManagerMap",
+                    "relationship": "Self.SupplierProductManagerMap_Supplier",
+                    "fromRole": "SupplierProductManagerMap_Supplier_Target",
+                    "toRole": "SupplierProductManagerMap_Supplier_Source"
+                }
+            ]
+        },
+        {
+            "name": "EmailHistory",
+            "customannotation:ClrType": "SupplierPortal.Model.EmailHistory, SupplierPortal.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "key": {
+                "propertyRef": {
+                    "name": "Id"
+                }
+            },
+            "property": [
+                {
+                    "name": "Id",
+                    "type": "Edm.Int32",
+                    "nullable": "false",
+                    "annotation:StoreGeneratedPattern": "Identity"
+                },
+                {
+                    "name": "DateSent",
+                    "type": "Edm.DateTime"
+                },
+                {
+                    "name": "Subject",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "Recipients",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "EmailCategoryId",
+                    "type": "Edm.Int32",
+                    "nullable": "false"
+                },
+                {
+                    "name": "SupplierId",
+                    "type": "Edm.Int32",
+                    "nullable": "false"
+                }
+            ],
+            "navigationProperty": [
+                {
+                    "name": "EmailCategory",
+                    "relationship": "Self.EmailHistory_EmailCategory",
+                    "fromRole": "EmailHistory_EmailCategory_Source",
+                    "toRole": "EmailHistory_EmailCategory_Target"
+                },
+                {
+                    "name": "Supplier",
+                    "relationship": "Self.EmailHistory_Supplier",
+                    "fromRole": "EmailHistory_Supplier_Source",
+                    "toRole": "EmailHistory_Supplier_Target"
+                }
+            ]
+        },
+        {
+            "name": "EmailCategory",
+            "customannotation:ClrType": "SupplierPortal.Model.EmailCategory, SupplierPortal.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "key": {
+                "propertyRef": {
+                    "name": "Id"
+                }
+            },
+            "property": [
+                {
+                    "name": "Id",
+                    "type": "Edm.Int32",
+                    "nullable": "false",
+                    "annotation:StoreGeneratedPattern": "Identity"
+                },
+                {
+                    "name": "Name",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "Template",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                }
+            ]
+        },
+        {
+            "name": "ProductGroup",
+            "customannotation:ClrType": "SupplierPortal.Model.ProductGroup, SupplierPortal.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "key": {
+                "propertyRef": {
+                    "name": "Id"
+                }
+            },
+            "property": [
+                {
+                    "name": "Id",
+                    "type": "Edm.Int32",
+                    "nullable": "false",
+                    "annotation:StoreGeneratedPattern": "Identity"
+                },
+                {
+                    "name": "Name",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                }
+            ]
+        },
+        {
+            "name": "SupplierProductManagerMap",
+            "customannotation:ClrType": "SupplierPortal.Model.SupplierProductManagerMap, SupplierPortal.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "key": {
+                "propertyRef": {
+                    "name": "Id"
+                }
+            },
+            "property": [
+                {
+                    "name": "Id",
+                    "type": "Edm.Int32",
+                    "nullable": "false",
+                    "annotation:StoreGeneratedPattern": "Identity"
+                },
+                {
+                    "name": "SupplierId",
+                    "type": "Edm.Int32",
+                    "nullable": "false"
+                },
+                {
+                    "name": "ProductManagerId",
+                    "type": "Edm.Int32",
+                    "nullable": "false"
+                },
+                {
+                    "name": "PrimaryProductManager",
+                    "type": "Edm.Boolean",
+                    "nullable": "false"
+                }
+            ],
+            "navigationProperty": [
+                {
+                    "name": "ProductManager",
+                    "relationship": "Self.ProductManager_SupplierProductManagerMap",
+                    "fromRole": "ProductManager_SupplierProductManagerMap_Target",
+                    "toRole": "ProductManager_SupplierProductManagerMap_Source"
+                },
+                {
+                    "name": "Supplier",
+                    "relationship": "Self.SupplierProductManagerMap_Supplier",
+                    "fromRole": "SupplierProductManagerMap_Supplier_Source",
+                    "toRole": "SupplierProductManagerMap_Supplier_Target"
+                }
+            ]
+        },
+        {
+            "name": "ProductManager",
+            "customannotation:ClrType": "SupplierPortal.Model.ProductManager, SupplierPortal.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "key": {
+                "propertyRef": {
+                    "name": "Id"
+                }
+            },
+            "property": [
+                {
+                    "name": "Id",
+                    "type": "Edm.Int32",
+                    "nullable": "false",
+                    "annotation:StoreGeneratedPattern": "Identity"
+                },
+                {
+                    "name": "FirstName",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "LastName",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "JobTitle",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "ContactNotificationStatus",
+                    "type": "Edm.Boolean"
+                },
+                {
+                    "name": "EmailAddress",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "PhoneNumber",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "ActiveDirectoryId",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                }
+            ],
+            "navigationProperty": {
+                "name": "SupplierProductManagerMap",
+                "relationship": "Self.ProductManager_SupplierProductManagerMap",
+                "fromRole": "ProductManager_SupplierProductManagerMap_Source",
+                "toRole": "ProductManager_SupplierProductManagerMap_Target"
+            }
+        },
+        {
+            "name": "Product",
+            "customannotation:ClrType": "SupplierPortal.Model.Product, SupplierPortal.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "key": {
+                "propertyRef": {
+                    "name": "Id"
+                }
+            },
+            "property": [
+                {
+                    "name": "Id",
+                    "type": "Edm.Int32",
+                    "nullable": "false",
+                    "annotation:StoreGeneratedPattern": "Identity"
+                },
+                {
+                    "name": "NDC",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "Econo",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "NameDescription",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "Dosage",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "PackSize",
+                    "type": "Edm.Int32"
+                },
+                {
+                    "name": "IsMonograph",
+                    "type": "Edm.Boolean"
+                },
+                {
+                    "name": "IsGeneric",
+                    "type": "Edm.Boolean"
+                },
+                {
+                    "name": "IsCurrentWACPublishedByFDB",
+                    "type": "Edm.Boolean"
+                },
+                {
+                    "name": "IsFDAApproved",
+                    "type": "Edm.Boolean"
+                },
+                {
+                    "name": "IsSupplierOrRepackagerOrReseller",
+                    "type": "Edm.Boolean"
+                },
+                {
+                    "name": "IsActiveProduct",
+                    "type": "Edm.Boolean"
+                },
+                {
+                    "name": "ContractLead",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "IsCertified",
+                    "type": "Edm.Boolean"
+                },
+                {
+                    "name": "CertificationId",
+                    "type": "Edm.Int32",
+                    "nullable": "false"
+                },
+                {
+                    "name": "IsMultiSource",
+                    "type": "Edm.Boolean",
+                    "nullable": "false"
+                },
+                {
+                    "name": "COO1",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "COO2",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "COO3",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "COO4",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "COO5",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                }
+            ],
+            "navigationProperty": [
+                {
+                    "name": "Certification",
+                    "relationship": "Self.Product_Certification",
+                    "fromRole": "Product_Certification_Source",
+                    "toRole": "Product_Certification_Target"
+                },
+                {
+                    "name": "CountriesOfOrigin",
+                    "relationship": "Self.Product_CountriesOfOrigin",
+                    "fromRole": "Product_CountriesOfOrigin_Source",
+                    "toRole": "Product_CountriesOfOrigin_Target"
+                }
+            ]
+        },
+        {
+            "name": "CountryOfOrigin",
+            "customannotation:ClrType": "SupplierPortal.Model.CountryOfOrigin, SupplierPortal.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "key": {
+                "propertyRef": {
+                    "name": "Id"
+                }
+            },
+            "property": [
+                {
+                    "name": "Id",
+                    "type": "Edm.Int32",
+                    "nullable": "false",
+                    "annotation:StoreGeneratedPattern": "Identity"
+                },
+                {
+                    "name": "Name",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "Bigram",
+                    "type": "Edm.String",
+                    "maxLength": "2",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "Trigram",
+                    "type": "Edm.String",
+                    "maxLength": "3",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "Number",
+                    "type": "Edm.Int32",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "name": "HelpContent",
+            "customannotation:ClrType": "SupplierPortal.Model.HelpContent, SupplierPortal.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "key": {
+                "propertyRef": {
+                    "name": "Id"
+                }
+            },
+            "property": [
+                {
+                    "name": "Id",
+                    "type": "Edm.Int32",
+                    "nullable": "false",
+                    "annotation:StoreGeneratedPattern": "Identity"
+                },
+                {
+                    "name": "Name",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                },
+                {
+                    "name": "Content",
+                    "type": "Edm.String",
+                    "maxLength": "Max",
+                    "fixedLength": "false",
+                    "unicode": "true"
+                }
+            ]
+        }
+    ],
+    "association": [
+        {
+            "name": "CertificationStatus_Certifications",
+            "end": [
+                {
+                    "role": "CertificationStatus_Certifications_Source",
+                    "type": "Edm.Self.CertificationStatus",
+                    "multiplicity": "1",
+                    "onDelete": {
+                        "action": "Cascade"
+                    }
+                },
+                {
+                    "role": "CertificationStatus_Certifications_Target",
+                    "type": "Edm.Self.Certification",
+                    "multiplicity": "*"
+                }
+            ],
+            "referentialConstraint": {
+                "principal": {
+                    "role": "CertificationStatus_Certifications_Source",
+                    "propertyRef": {
+                        "name": "Id"
+                    }
+                },
+                "dependent": {
+                    "role": "CertificationStatus_Certifications_Target",
+                    "propertyRef": {
+                        "name": "CertificationStatusId"
+                    }
+                }
+            }
+        },
+        {
+            "name": "EmailHistory_EmailCategory",
+            "end": [
+                {
+                    "role": "EmailHistory_EmailCategory_Source",
+                    "type": "Edm.Self.EmailHistory",
+                    "multiplicity": "*"
+                },
+                {
+                    "role": "EmailHistory_EmailCategory_Target",
+                    "type": "Edm.Self.EmailCategory",
+                    "multiplicity": "1",
+                    "onDelete": {
+                        "action": "Cascade"
+                    }
+                }
+            ],
+            "referentialConstraint": {
+                "principal": {
+                    "role": "EmailHistory_EmailCategory_Target",
+                    "propertyRef": {
+                        "name": "Id"
+                    }
+                },
+                "dependent": {
+                    "role": "EmailHistory_EmailCategory_Source",
+                    "propertyRef": {
+                        "name": "EmailCategoryId"
+                    }
+                }
+            }
+        },
+        {
+            "name": "EmailHistory_Supplier",
+            "end": [
+                {
+                    "role": "EmailHistory_Supplier_Source",
+                    "type": "Edm.Self.EmailHistory",
+                    "multiplicity": "*"
+                },
+                {
+                    "role": "EmailHistory_Supplier_Target",
+                    "type": "Edm.Self.Supplier",
+                    "multiplicity": "1",
+                    "onDelete": {
+                        "action": "Cascade"
+                    }
+                }
+            ],
+            "referentialConstraint": {
+                "principal": {
+                    "role": "EmailHistory_Supplier_Target",
+                    "propertyRef": {
+                        "name": "Id"
+                    }
+                },
+                "dependent": {
+                    "role": "EmailHistory_Supplier_Source",
+                    "propertyRef": {
+                        "name": "SupplierId"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Supplier_ProductGroup",
+            "end": [
+                {
+                    "role": "Supplier_ProductGroup_Source",
+                    "type": "Edm.Self.Supplier",
+                    "multiplicity": "*"
+                },
+                {
+                    "role": "Supplier_ProductGroup_Target",
+                    "type": "Edm.Self.ProductGroup",
+                    "multiplicity": "1",
+                    "onDelete": {
+                        "action": "Cascade"
+                    }
+                }
+            ],
+            "referentialConstraint": {
+                "principal": {
+                    "role": "Supplier_ProductGroup_Target",
+                    "propertyRef": {
+                        "name": "Id"
+                    }
+                },
+                "dependent": {
+                    "role": "Supplier_ProductGroup_Source",
+                    "propertyRef": {
+                        "name": "ProductGroupId"
+                    }
+                }
+            }
+        },
+        {
+            "name": "ProductManager_SupplierProductManagerMap",
+            "end": [
+                {
+                    "role": "ProductManager_SupplierProductManagerMap_Source",
+                    "type": "Edm.Self.ProductManager",
+                    "multiplicity": "1",
+                    "onDelete": {
+                        "action": "Cascade"
+                    }
+                },
+                {
+                    "role": "ProductManager_SupplierProductManagerMap_Target",
+                    "type": "Edm.Self.SupplierProductManagerMap",
+                    "multiplicity": "*"
+                }
+            ],
+            "referentialConstraint": {
+                "principal": {
+                    "role": "ProductManager_SupplierProductManagerMap_Source",
+                    "propertyRef": {
+                        "name": "Id"
+                    }
+                },
+                "dependent": {
+                    "role": "ProductManager_SupplierProductManagerMap_Target",
+                    "propertyRef": {
+                        "name": "ProductManagerId"
+                    }
+                }
+            }
+        },
+        {
+            "name": "SupplierProductManagerMap_Supplier",
+            "end": [
+                {
+                    "role": "SupplierProductManagerMap_Supplier_Source",
+                    "type": "Edm.Self.SupplierProductManagerMap",
+                    "multiplicity": "*"
+                },
+                {
+                    "role": "SupplierProductManagerMap_Supplier_Target",
+                    "type": "Edm.Self.Supplier",
+                    "multiplicity": "1",
+                    "onDelete": {
+                        "action": "Cascade"
+                    }
+                }
+            ],
+            "referentialConstraint": {
+                "principal": {
+                    "role": "SupplierProductManagerMap_Supplier_Target",
+                    "propertyRef": {
+                        "name": "Id"
+                    }
+                },
+                "dependent": {
+                    "role": "SupplierProductManagerMap_Supplier_Source",
+                    "propertyRef": {
+                        "name": "SupplierId"
+                    }
+                }
+            }
+        },
+        {
+            "name": "SupplierContact_Supplier",
+            "end": [
+                {
+                    "role": "SupplierContact_Supplier_Source",
+                    "type": "Edm.Self.SupplierContact",
+                    "multiplicity": "*"
+                },
+                {
+                    "role": "SupplierContact_Supplier_Target",
+                    "type": "Edm.Self.Supplier",
+                    "multiplicity": "1",
+                    "onDelete": {
+                        "action": "Cascade"
+                    }
+                }
+            ],
+            "referentialConstraint": {
+                "principal": {
+                    "role": "SupplierContact_Supplier_Target",
+                    "propertyRef": {
+                        "name": "Id"
+                    }
+                },
+                "dependent": {
+                    "role": "SupplierContact_Supplier_Source",
+                    "propertyRef": {
+                        "name": "SupplierId"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Certification_CertifiedBy",
+            "end": [
+                {
+                    "role": "Certification_CertifiedBy_Source",
+                    "type": "Edm.Self.Certification",
+                    "multiplicity": "*"
+                },
+                {
+                    "role": "Certification_CertifiedBy_Target",
+                    "type": "Edm.Self.SupplierContact",
+                    "multiplicity": "0..1"
+                }
+            ],
+            "referentialConstraint": {
+                "principal": {
+                    "role": "Certification_CertifiedBy_Target",
+                    "propertyRef": {
+                        "name": "Id"
+                    }
+                },
+                "dependent": {
+                    "role": "Certification_CertifiedBy_Source",
+                    "propertyRef": {
+                        "name": "SupplierContactId"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Product_Certification",
+            "end": [
+                {
+                    "role": "Product_Certification_Source",
+                    "type": "Edm.Self.Product",
+                    "multiplicity": "*"
+                },
+                {
+                    "role": "Product_Certification_Target",
+                    "type": "Edm.Self.Certification",
+                    "multiplicity": "1",
+                    "onDelete": {
+                        "action": "Cascade"
+                    }
+                }
+            ],
+            "referentialConstraint": {
+                "principal": {
+                    "role": "Product_Certification_Target",
+                    "propertyRef": {
+                        "name": "Id"
+                    }
+                },
+                "dependent": {
+                    "role": "Product_Certification_Source",
+                    "propertyRef": {
+                        "name": "CertificationId"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Product_CountriesOfOrigin",
+            "end": [
+                {
+                    "role": "Product_CountriesOfOrigin_Source",
+                    "type": "Edm.Self.Product",
+                    "multiplicity": "0..1"
+                },
+                {
+                    "role": "Product_CountriesOfOrigin_Target",
+                    "type": "Edm.Self.CountryOfOrigin",
+                    "multiplicity": "*"
+                }
+            ]
+        },
+        {
+            "name": "Certification_Supplier",
+            "end": [
+                {
+                    "role": "Certification_Supplier_Source",
+                    "type": "Edm.Self.Certification",
+                    "multiplicity": "*"
+                },
+                {
+                    "role": "Certification_Supplier_Target",
+                    "type": "Edm.Self.Supplier",
+                    "multiplicity": "1",
+                    "onDelete": {
+                        "action": "Cascade"
+                    }
+                }
+            ],
+            "referentialConstraint": {
+                "principal": {
+                    "role": "Certification_Supplier_Target",
+                    "propertyRef": {
+                        "name": "Id"
+                    }
+                },
+                "dependent": {
+                    "role": "Certification_Supplier_Source",
+                    "propertyRef": {
+                        "name": "SupplierId"
+                    }
+                }
+            }
+        }
+    ],
+    "entityContainer": {
+        "name": "SupplierPortalDbContext",
+        "customannotation:UseClrTypes": "true",
+        "entitySet": [
+            {
+                "name": "Certifications",
+                "entityType": "Self.Certification"
+            },
+            {
+                "name": "CertificationStatuses",
+                "entityType": "Self.CertificationStatus"
+            },
+            {
+                "name": "SupplierContacts",
+                "entityType": "Self.SupplierContact"
+            },
+            {
+                "name": "Suppliers",
+                "entityType": "Self.Supplier"
+            },
+            {
+                "name": "Emails",
+                "entityType": "Self.EmailHistory"
+            },
+            {
+                "name": "EmailCategories",
+                "entityType": "Self.EmailCategory"
+            },
+            {
+                "name": "ProductGroups",
+                "entityType": "Self.ProductGroup"
+            },
+            {
+                "name": "SupplierProductManagerMap",
+                "entityType": "Self.SupplierProductManagerMap"
+            },
+            {
+                "name": "ProductManagers",
+                "entityType": "Self.ProductManager"
+            },
+            {
+                "name": "Products",
+                "entityType": "Self.Product"
+            },
+            {
+                "name": "CountriesOfOrigin",
+                "entityType": "Self.CountryOfOrigin"
+            },
+            {
+                "name": "HelpContents",
+                "entityType": "Self.HelpContent"
+            }
+        ],
+        "associationSet": [
+            {
+                "name": "CertificationStatus_Certifications",
+                "association": "Self.CertificationStatus_Certifications",
+                "end": [
+                    {
+                        "role": "CertificationStatus_Certifications_Source",
+                        "entitySet": "CertificationStatuses"
+                    },
+                    {
+                        "role": "CertificationStatus_Certifications_Target",
+                        "entitySet": "Certifications"
+                    }
+                ]
+            },
+            {
+                "name": "EmailHistory_EmailCategory",
+                "association": "Self.EmailHistory_EmailCategory",
+                "end": [
+                    {
+                        "role": "EmailHistory_EmailCategory_Source",
+                        "entitySet": "Emails"
+                    },
+                    {
+                        "role": "EmailHistory_EmailCategory_Target",
+                        "entitySet": "EmailCategories"
+                    }
+                ]
+            },
+            {
+                "name": "EmailHistory_Supplier",
+                "association": "Self.EmailHistory_Supplier",
+                "end": [
+                    {
+                        "role": "EmailHistory_Supplier_Source",
+                        "entitySet": "Emails"
+                    },
+                    {
+                        "role": "EmailHistory_Supplier_Target",
+                        "entitySet": "Suppliers"
+                    }
+                ]
+            },
+            {
+                "name": "Supplier_ProductGroup",
+                "association": "Self.Supplier_ProductGroup",
+                "end": [
+                    {
+                        "role": "Supplier_ProductGroup_Source",
+                        "entitySet": "Suppliers"
+                    },
+                    {
+                        "role": "Supplier_ProductGroup_Target",
+                        "entitySet": "ProductGroups"
+                    }
+                ]
+            },
+            {
+                "name": "ProductManager_SupplierProductManagerMap",
+                "association": "Self.ProductManager_SupplierProductManagerMap",
+                "end": [
+                    {
+                        "role": "ProductManager_SupplierProductManagerMap_Source",
+                        "entitySet": "ProductManagers"
+                    },
+                    {
+                        "role": "ProductManager_SupplierProductManagerMap_Target",
+                        "entitySet": "SupplierProductManagerMap"
+                    }
+                ]
+            },
+            {
+                "name": "SupplierProductManagerMap_Supplier",
+                "association": "Self.SupplierProductManagerMap_Supplier",
+                "end": [
+                    {
+                        "role": "SupplierProductManagerMap_Supplier_Source",
+                        "entitySet": "SupplierProductManagerMap"
+                    },
+                    {
+                        "role": "SupplierProductManagerMap_Supplier_Target",
+                        "entitySet": "Suppliers"
+                    }
+                ]
+            },
+            {
+                "name": "SupplierContact_Supplier",
+                "association": "Self.SupplierContact_Supplier",
+                "end": [
+                    {
+                        "role": "SupplierContact_Supplier_Source",
+                        "entitySet": "SupplierContacts"
+                    },
+                    {
+                        "role": "SupplierContact_Supplier_Target",
+                        "entitySet": "Suppliers"
+                    }
+                ]
+            },
+            {
+                "name": "Certification_CertifiedBy",
+                "association": "Self.Certification_CertifiedBy",
+                "end": [
+                    {
+                        "role": "Certification_CertifiedBy_Source",
+                        "entitySet": "Certifications"
+                    },
+                    {
+                        "role": "Certification_CertifiedBy_Target",
+                        "entitySet": "SupplierContacts"
+                    }
+                ]
+            },
+            {
+                "name": "Product_Certification",
+                "association": "Self.Product_Certification",
+                "end": [
+                    {
+                        "role": "Product_Certification_Source",
+                        "entitySet": "Products"
+                    },
+                    {
+                        "role": "Product_Certification_Target",
+                        "entitySet": "Certifications"
+                    }
+                ]
+            },
+            {
+                "name": "Product_CountriesOfOrigin",
+                "association": "Self.Product_CountriesOfOrigin",
+                "end": [
+                    {
+                        "role": "Product_CountriesOfOrigin_Source",
+                        "entitySet": "Products"
+                    },
+                    {
+                        "role": "Product_CountriesOfOrigin_Target",
+                        "entitySet": "CountriesOfOrigin"
+                    }
+                ]
+            },
+            {
+                "name": "Certification_Supplier",
+                "association": "Self.Certification_Supplier",
+                "end"{
+                    "Introducing FOREIGN KEY constraint 'FK_dbo.Supplier_dbo.CertificationStatus_CertificationStatusId' on table 'Supplier' may cause cycles or multiple cascade paths. Specify ON DELETE NO ACTION or ON UPDATE NO ACTION, or modify other FOREIGN KEY constraints.\r\nCould not create constraint. See previous errors."
+                }

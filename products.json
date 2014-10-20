@@ -1,10 +1,7 @@
 {
     "$id": "1",
     "$type": "Breeze.WebApi2.QueryResult, Breeze.WebApi2", "Results": [
-    {
-        "$id": "2",
-        "$type": "_IB_jig3nij_dw5qwBorqBT28Cb7yovo[[System.Collections.Generic.ICollection`1[[SupplierPortal.Model.Product, SupplierPortal.Model]], mscorlib]], _IB_jig3nij_dw5qwBorqBT28Cb7yovo_IdeaBlade",
-        "Products": [
+
             {
                 "$id": "3",
                 "$type": "SupplierPortal.Model.Product, SupplierPortal.Model",
